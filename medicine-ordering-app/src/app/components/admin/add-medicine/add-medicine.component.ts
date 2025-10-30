@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { MedicineService } from '../../../services/medicine.service';
 import { Medicine } from '../../../models/medicine.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-medicine',
-  //imports: [],
-  templateUrl: './add-medicine.html',
-  styleUrl: './add-medicine.css',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './add-medicine.component.html',
+  styleUrl: './add-medicine.component.css',
 })
 
 export class AddMedicine {

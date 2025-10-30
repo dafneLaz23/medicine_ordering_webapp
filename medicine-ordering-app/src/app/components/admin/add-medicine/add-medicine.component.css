@@ -1,0 +1,25 @@
+.add-medicine-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 1.5rem;
+  background: #fdfdfd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.add-medicine-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.add-medicine-container form div {
+  margin-bottom: 1rem;
+}
+
+.add-medicine-container input,
+.add-medicine-container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
