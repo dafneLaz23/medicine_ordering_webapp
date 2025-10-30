@@ -1,1 +1,32 @@
-<p>add-medicine works!</p>
+<div class="add-medicine-container">
+  <h2>Add New Medicine</h2>
+
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="medicine.name" name="name" required />
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <textarea [(ngModel)]="medicine.description" name="description"></textarea>
+    </div>
+
+    <div>
+      <label>Price:</label>
+      <input type="number" [(ngModel)]="medicine.price" name="price" required />
+    </div>
+
+    <div>
+      <label>Stock:</label>
+      <input type="number" [(ngModel)]="medicine.stock_quantity" name="stock" required />
+    </div>
+
+    <div>
+      <label>Image:</label>
+      <input type="file" (change)="onFileSelected($event)" />
+    </div>
+
+    <button type="submit">Add Medicine</button>
+  </form>
+</div>
