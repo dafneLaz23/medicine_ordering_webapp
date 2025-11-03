@@ -23,3 +23,4 @@ export class MedicineService {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }
+

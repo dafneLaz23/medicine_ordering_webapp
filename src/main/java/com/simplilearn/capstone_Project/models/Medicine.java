@@ -17,9 +17,6 @@ public class Medicine {
 	@Column(name = "price")
 	private double price;
 	
-	@Column(name = "category")
-	private String category;
-	
 	@Column(name = "stock_quantity")
 	private int stock_quantity;
 	
@@ -56,14 +53,6 @@ public class Medicine {
 
 	public void setPrice(double price) {
 		this.price = price;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 
 	public int getStock_quantity() {

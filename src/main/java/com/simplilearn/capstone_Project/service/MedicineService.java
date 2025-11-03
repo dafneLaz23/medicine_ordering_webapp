@@ -16,23 +16,25 @@ public class MedicineService {
     @Autowired
     private MedicineRepository medicineRepository;
 
-    private static final String UPLOAD_DIR = "src/main/resources/static/images/";
+    //private static final String UPLOAD_DIR = "src/main/resources/static/images/";
 
 
     public Medicine addMedicine(String name,
-                                Double price,
                                 String description,
-                                MultipartFile imageFile) throws IOException {
+                                Double price,
+                                int stock_quantity) {
+                              //  MultipartFile imageFile) throws IOException {
 
-        String fileName = imageFile.getOriginalFilename();
-        Path filePath = Paths.get(UPLOAD_DIR + fileName);
-        Files.write(filePath, imageFile.getBytes());
-
+      //  String fileName = imageFile.getOriginalFilename();
+      //  Path filePath = Paths.get(UPLOAD_DIR + fileName);
+      //  Files.write(filePath, imageFile.getBytes());
+		
         Medicine med = new Medicine();
         med.setName(name);
-        med.setPrice(price);
         med.setDescription(description);
-        med.setImage_url("/images/" + fileName);
+        med.setPrice(price);
+        med.setStock_quantity(stock_quantity);        
+       // med.setImage_url("/images/" + fileName);
 
         return medicineRepository.save(med);
     }

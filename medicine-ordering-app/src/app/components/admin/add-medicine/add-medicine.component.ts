@@ -35,7 +35,7 @@ export class AddMedicine {
     formData.append('name', this.medicine.name);
     formData.append('description', this.medicine.description);
     formData.append('price', this.medicine.price.toString());
-    formData.append('stock', this.medicine.stock_quantity.toString());
+    formData.append('stock_quantity', this.medicine.stock_quantity.toString());
 
     if (this.selectedFile) {
       formData.append('image', this.selectedFile);

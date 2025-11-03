@@ -20,19 +20,27 @@ public class MedicineController {
 
     @PostMapping("/add")
     public ResponseEntity<Medicine> addMedicine(
-            @RequestParam("name") String name,
-            @RequestParam("price") Double price,
+            @RequestParam("name") String name,   
             @RequestParam("description") String description,
-            @RequestParam(value = "image", required = false) MultipartFile imageFile) {
-
+            @RequestParam("price") Double price,
+            @RequestParam("stock_quantity") int stock_quantity) throws IOException{
+   
+	    	
+	    	Medicine medicine = medicineService.addMedicine(name, description, price, stock_quantity);
+			return ResponseEntity.ok(medicine);
+    }
+    		
+    
+           // @RequestParam(value = "image", required = false) MultipartFile imageFile) {
+/**
         try {
-            Medicine medicine = medicineService.addMedicine(name, price, description, imageFile);
+            Medicine medicine = medicineService.addMedicine(name, description, price, stock_quantity);
             return ResponseEntity.ok(medicine);
         } catch (IOException e) {
             return ResponseEntity.internalServerError().build();
         }
     }
-
+**/
     @GetMapping
     public ResponseEntity<List<Medicine>> getAllMedicines() {
         return ResponseEntity.ok(medicineService.getAllMedicines());
