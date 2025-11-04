@@ -55,4 +55,9 @@ public class MedicineService {
         medicine.setId(id);
         return medicineRepository.save(medicine);
     }
+    
+    public Medicine getMedicineById(int id) {
+        return medicineRepository.findById(id).orElse(null);
+    }
+
 }

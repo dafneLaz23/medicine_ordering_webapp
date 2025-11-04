@@ -1,5 +1,11 @@
+<br>
+<br>
+<br>
 <div class="add-medicine-container">
-  <h2>Add New Medicine</h2>
+
+<br>
+<br>
+  <h2>{{ isEditMode ? 'Edit Medicine' : 'Add Medicine' }}</h2>
 
   <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
     <div>
@@ -22,11 +28,12 @@
       <input type="number" [(ngModel)]="medicine.stock_quantity" name="stock" required />
     </div>
 
-    <div>
-      <label>Image:</label>
-      <input type="file" (change)="onFileSelected($event)" />
-    </div>
-
-    <button type="submit">Add Medicine</button>
+    <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Medicine</button>
   </form>
+  <br>
+  <br>
+
 </div>
+<br>
+<br>
+<br>

@@ -46,18 +46,17 @@ public class MedicineController {
         return ResponseEntity.ok(medicineService.getAllMedicines());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Medicine> updateMedicine(
-            @PathVariable int id,
-            @RequestBody Medicine updatedMedicine) {
-
-        Medicine medicine = medicineService.updateMedicine(id, updatedMedicine);
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Medicine> getMedicineById(@PathVariable int id) {
+        Medicine medicine = medicineService.getMedicineById(id);
         if (medicine != null) {
             return ResponseEntity.ok(medicine);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMedicine(@PathVariable int id) {
