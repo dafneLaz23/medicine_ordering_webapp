@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './add-medicine.component.css',
 })
 
-export class AddMedicine {
+export class AddMedicineComponent {
 
   medicine: Medicine = {
     name: '',

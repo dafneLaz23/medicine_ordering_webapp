@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Available Medicines</h2>
+
+  <div *ngIf="isLoading" class="loading">Loading medicines...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div class="medicine-grid" *ngIf="!isLoading && medicines.length > 0">
+    <div class="medicine-card" *ngFor="let medicine of medicines">
+      <img *ngIf="medicine.image_url" [src]="'http://localhost:8080' + medicine.image_url" alt="{{ medicine.name }}">
+      <h3>{{ medicine.name }}</h3>
+      <p>{{ medicine.description }}</p>
+      <p><strong>Price:</strong> ${{ medicine.price }}</p>
+      <p><strong>Stock:</strong> {{ medicine.stock_quantity }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && medicines.length === 0" class="empty">
+    No medicines found.
+  </div>
+</div>

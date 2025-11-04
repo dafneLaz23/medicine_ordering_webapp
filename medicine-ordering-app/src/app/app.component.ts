@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AddMedicine } from './components/admin/add-medicine/add-medicine.component';
+import { AddMedicineComponent } from './components/admin/add-medicine/add-medicine.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @Component({
