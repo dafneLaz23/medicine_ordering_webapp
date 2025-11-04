@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Manage Medicines</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price ($)</th>
+        <th>Stock</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medicine of medicines">
+        <td>{{ medicine.name }}</td>
+        <td>{{ medicine.description }}</td>
+        <td>{{ medicine.price }}</td>
+        <td>{{ medicine.stock_quantity }}</td>
+        <td>
+          <button class="edit-btn" (click)="onEdit(medicine.id)">Edit</button>
+          <button class="delete-btn" (click)="onDelete(medicine.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
