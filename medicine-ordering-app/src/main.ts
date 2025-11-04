@@ -6,11 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AddMedicineComponent } from './app/components/admin/add-medicine/add-medicine.component';
 import { ViewMedicinesComponent } from './app/components/user/view-medicines/view-medicines.component';
+import { ManageMedicinesComponent } from './app/components/admin/manage-medicines/manage-medicines.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'view-medicines', pathMatch: 'full' },
   { path: 'add-medicine', component: AddMedicineComponent },
-  { path: 'view-medicines', component: ViewMedicinesComponent }
+  { path: 'view-medicines', component: ViewMedicinesComponent },
+  { path: 'manage-medicines', component: ManageMedicinesComponent}
 ];
 
 bootstrapApplication(AppComponent, {
