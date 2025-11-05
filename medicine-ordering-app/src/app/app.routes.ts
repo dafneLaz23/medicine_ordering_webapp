@@ -3,10 +3,11 @@ import { AddMedicineComponent} from './components/admin/add-medicine/add-medicin
 import { ViewMedicinesComponent } from './components/user/view-medicines/view-medicines.component';
 //import { Orders } from './components/orders/orders.component';
 import { ManageMedicinesComponent } from './components/admin/manage-medicines/manage-medicines.component';
+import { loginComponent } from './components/shared/login/login.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'view-medicines', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component:  loginComponent },
   { path: 'add-medicine', component: AddMedicineComponent },
-  { path: 'view-medicines', component: ViewMedicinesComponent },
-  { path: 'manage-medicines', component: ManageMedicinesComponent },
+  { path: 'view-medicines', component: ViewMedicinesComponent }
 ];
