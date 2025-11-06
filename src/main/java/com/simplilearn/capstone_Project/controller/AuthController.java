@@ -1,7 +1,7 @@
 package com.simplilearn.capstone_Project.controller;
 
 import com.simplilearn.capstone_Project.models.User;
-import com.simplilearn.capstone_Project.service.AuthService;
+import com.simplilearn.capstone_Project.service.AuthenticateUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class AuthController {
 
     @Autowired
-    private AuthService authService;
+    private AuthenticateUser authService;
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody Map<String, String> loginData) {

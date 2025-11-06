@@ -1,10 +1,11 @@
+
 package com.simplilearn.capstone_Project.service;
 
 import com.simplilearn.capstone_Project.models.User;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthService {
+public class AuthenticateUser {
 
     // This is a simplified example — you can replace it with database logic
     public User authenticate(String username, String password) {

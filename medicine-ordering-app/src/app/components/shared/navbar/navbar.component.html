@@ -1,14 +1,26 @@
+
 <nav class="navbar">
   <div class="logo">💊 MedicineApp</div>
-
+  
   <ul class="nav-links">
-    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/add-medicine" routerLinkActive="active">Add Medicine</a></li>
-    <li><a routerLink="/view-medicines" routerLinkActive="active">View Medicines</a></li>
-    <li><a routerLink="/manage-medicines" routerLinkActive="active">Manage Medicines</a></li>
-    
-	<li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/view-medicines">View Medicines</a></li>
 
+    <li *ngIf="authService.isAdminUser()">
+      <a routerLink="/add-medicine">Add Medicine</a>
+    </li>
+
+    <li *ngIf="authService.isAdminUser()">
+      <a routerLink="/manage-medicine">Manage Medicines</a>
+    </li>
+
+    <li *ngIf="!authService.isLoggedIn()">
+      <a routerLink="/login">Login</a>
+    </li>
+
+    <li *ngIf="authService.isLoggedIn()">
+      <button (click)="logout()">Logout</button>
+    </li>
   </ul>
 </nav>
+
 <hr />
