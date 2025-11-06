@@ -5,9 +5,11 @@ import { ManageMedicinesComponent } from './components/admin/manage-medicines/ma
 import { LoginComponent } from './components/shared/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';  // ✅ new import
+import { CartComponent } from './components/user/cart/cart.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'view-medicines', pathMatch: 'full' },
+  { path: 'cart', component: CartComponent },
   { path: 'view-medicines', component: ViewMedicinesComponent },
   { path: 'login', component: LoginComponent },
 

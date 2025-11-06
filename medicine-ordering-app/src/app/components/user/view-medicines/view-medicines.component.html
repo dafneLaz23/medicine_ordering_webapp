@@ -11,6 +11,7 @@
       <p>{{ medicine.description }}</p>
       <p><strong>Price:</strong> ${{ medicine.price }}</p>
       <p><strong>Stock:</strong> {{ medicine.stock_quantity }}</p>
+      <button (click)="addToCart(medicine)">Add to Cart</button>
     </div>
   </div>
   <div *ngIf="!isLoading && medicines.length === 0" class="empty">

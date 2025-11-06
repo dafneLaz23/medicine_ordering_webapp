@@ -1,0 +1,79 @@
+/* Makes the whole page centered */
+.cart-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f7f8fa;
+  padding: 20px;
+}
+
+/* Container for the cart */
+.cart-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Empty cart message */
+.empty-cart {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Table styling */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cart-table th, .cart-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.cart-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Remove button */
+.remove-btn {
+  background-color: #dc3545;
+}
+
+.remove-btn:hover {
+  background-color: #b52b38;
+}
+
+/* Checkout button */
+.checkout-btn {
+  margin-top: 20px;
+  background-color: #28a745;
+}
+
+.checkout-btn:hover {
+  background-color: #1e7e34;
+}
