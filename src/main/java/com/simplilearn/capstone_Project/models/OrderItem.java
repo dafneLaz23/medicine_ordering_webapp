@@ -1,5 +1,7 @@
 package com.simplilearn.capstone_Project.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,17 +15,16 @@ public class OrderItem {
     private int quantity;
     private double price; // snapshot of price at time of purchase
 
-    // ✅ Relationship to Order
     @ManyToOne
     @JoinColumn(name = "order_id")
+    @JsonBackReference
     private Order order;
 
-    // ✅ Relationship to Medicine
     @ManyToOne
     @JoinColumn(name = "medicine_id")
     private Medicine medicine;
 
-    // ✅ Getters & Setters
+
     public int getId() {
         return id;
     }

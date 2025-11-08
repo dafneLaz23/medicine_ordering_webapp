@@ -1,8 +1,10 @@
 package com.simplilearn.capstone_Project.controller;
 
 import com.simplilearn.capstone_Project.models.Order;
+import com.simplilearn.capstone_Project.models.OrderRequest;
 import com.simplilearn.capstone_Project.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,11 +16,12 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
-
+    /**
     @PostMapping("/place/{userId}")
     public Order placeOrder(@PathVariable int userId) {
         return orderService.placeOrder(userId);
     }
+    **/
 
 
     @GetMapping("/user/{userId}")
@@ -30,4 +33,10 @@ public class OrderController {
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
+    
+    @PostMapping("/create")
+    public ResponseEntity<Order> createOrder(@RequestBody OrderRequest request) {
+        return ResponseEntity.ok(orderService.createOrder(request));
+    }
+
 }

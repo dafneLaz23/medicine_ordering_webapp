@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -13,11 +15,12 @@ public class Order {
     private int id;
 
     private int userId;
-    private LocalDateTime orderDate;
+    private String customerName;
+	private LocalDateTime order_Date;
     private String status;
 
-    // ✅ Relationship with OrderItem
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<OrderItem> orderItems;
 
 
@@ -36,13 +39,20 @@ public class Order {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+    public String getCustomerName() {
+  		return customerName;
+  	}
+
+  	public void setCustomerName(String customerName) {
+  		this.customerName = customerName;
+  	}
 
     public LocalDateTime getOrderDate() {
-        return orderDate;
+        return order_Date;
     }
 
     public void setOrderDate(LocalDateTime orderDate) {
-        this.orderDate = orderDate;
+        this.order_Date = orderDate;
     }
 
     public String getStatus() {
@@ -60,4 +70,7 @@ public class Order {
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
     }
+    
+    
+
 }

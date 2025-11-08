@@ -5,3 +5,4 @@ import com.simplilearn.capstone_Project.models.Medicine;
 
 public interface MedicineRepository extends JpaRepository<Medicine, Integer> {
 }
+
